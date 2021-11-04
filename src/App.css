@@ -1,7 +1,11 @@
 .App {
   text-align: center;
+  padding: 10 10,
 }
-
+body {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+ 
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
