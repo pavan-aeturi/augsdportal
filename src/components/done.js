@@ -1,11 +1,11 @@
 import React from 'react';
 import Table  from './Table';
-import {Receivedata }from './Receivedata'
+import {ReceiveCollectedData }from './Receivedata'
 export const DatatablePage = () => {
   return (
     <div>
     <Table
-      data={()=>Receivedata('r')}
+      data={()=>ReceiveCollectedData()}
       signal={false}
     />
     </div>

@@ -13,7 +13,7 @@ import {
 
 export const Header = (props) => {
   const [showNavColor, setShowNavColor] = useState(false);
- 
+  
   return (
     <>
     <MDBNavbar expand='lg' dark bgColor='primary'>
@@ -31,19 +31,19 @@ export const Header = (props) => {
         </MDBNavbarToggler>
         <MDBCollapse show={showNavColor} navbar>
           <MDBNavbarNav className='me-auto mb-2 mb-lg-0'>
-            <MDBNavbarItem className='active'>
+            <MDBNavbarItem className={props.home && 'active'}>
               <MDBNavbarLink aria-current='page' href='/home'>Home</MDBNavbarLink>
             </MDBNavbarItem>
-            <MDBNavbarItem>
+            <MDBNavbarItem className={props.waiting && 'active'}>
               <MDBNavbarLink href='/waiting'>Waiting</MDBNavbarLink>
             </MDBNavbarItem>
-            <MDBNavbarItem>
+            <MDBNavbarItem className={props.accepted && 'active'}>
               <MDBNavbarLink href='/accepted'>Accepted</MDBNavbarLink>
             </MDBNavbarItem>
-            <MDBNavbarItem>
+            <MDBNavbarItem className={props.done && 'active'}>
               <MDBNavbarLink href='/done'>Done</MDBNavbarLink>
             </MDBNavbarItem>
-            <MDBNavbarItem>
+            <MDBNavbarItem className={props.about && 'active'}>
               <MDBNavbarLink href='/about'>About</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>

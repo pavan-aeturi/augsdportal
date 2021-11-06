@@ -17,8 +17,7 @@ export const DatatablePage =  (props) =>  {
   
   const sendPutRequest =(status)=>{
     setDone(true)
-    modalInfo.status=status
-    Promise.resolve(UpdateRequest(modalInfo,modalInfo.id)).then((response)=>{
+    Promise.resolve(UpdateRequest({status:status},modalInfo.id)).then((response)=>{
        setDone(false)
        handleClose()
        setSignal(!signal)

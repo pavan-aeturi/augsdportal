@@ -15,15 +15,14 @@ function App() {
   // console.log(auth)
   return (
     <Router>
-   
       <Switch>   
         <Route path={"/login"} component={Login}/>
         <Route path={"/logout"} component={Logout}/>
-        <Route path={"/home"} component={()=>{console.log(sessionStorage.getItem("JWT"));return !sessionStorage.getItem("JWT")? <Redirect to="/login" />:<><Header/> <div className="mainbody"> <Home/></div></>}}/>
-        <Route path={"/done"} component={()=>{return !sessionStorage.getItem("JWT")? <Redirect to="/login" />:<><Header/><div className="mainbody"> <Done/></div></>}}/>
-        <Route path={"/accepted"} component={()=>{return !sessionStorage.getItem("JWT")? <Redirect to="/login" />:<><Header/><div className="mainbody"> <Accepted/></div></>}}/>
-        <Route path={"/waiting"} component={()=>{return !sessionStorage.getItem("JWT")? <Redirect to="/login" />:<><Header/><div className="mainbody"> <Waiting/></div></>}}/>
-        <Route path={"/about"} component={()=>{return !sessionStorage.getItem("JWT")? <Redirect to="/login" />:<><Header/><div className="mainbody"> <About/></div></>}}/>
+        <Route path={"/home"} component={()=>{return !sessionStorage.getItem("JWT")? <Redirect to="/login" />:<><Header home={true}/><div className="mainbody"> <Home/></div></>}}/>
+        <Route path={"/done"} component={()=>{return !sessionStorage.getItem("JWT")? <Redirect to="/login" />:<><Header done={true}/><div className="mainbody"> <Done/></div></>}}/>
+        <Route path={"/accepted"} component={()=>{return !sessionStorage.getItem("JWT")? <Redirect to="/login" />:<><Header accepted={true}/><div className="mainbody"> <Accepted/></div></>}}/>
+        <Route path={"/waiting"} component={()=>{return !sessionStorage.getItem("JWT")? <Redirect to="/login" />:<><Header waiting={true}/><div className="mainbody"> <Waiting/></div></>}}/>
+        <Route path={"/about"} component={()=>{return !sessionStorage.getItem("JWT")? <Redirect to="/login" />:<><Header about={true}/><div className="mainbody"> <About/></div></>}}/>
         <Route path={"/"} component={()=>{return !sessionStorage.getItem("JWT")? <Redirect to="/login" />:<Redirect to="/home" />}}/>
           
         </Switch>

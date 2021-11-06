@@ -18,8 +18,7 @@ export const DatatablePage =  (props) =>  {
 
   const markCollected = ()=>{
     setDone(true)
-    modalInfo.status='r'
-    Promise.resolve(UpdateRequest(modalInfo,modalInfo.id)).then((response)=>{
+    Promise.resolve(UpdateRequest({collected:true},modalInfo.id)).then((response)=>{
         setDone(false)
         handleClose()
         setSignal(!signal)
